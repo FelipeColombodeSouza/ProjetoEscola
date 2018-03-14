@@ -9,6 +9,7 @@ import br.com.bianca.Escola.Aluno;
 import br.com.bianca.Escola.Disciplina;
 import br.com.bianca.Escola.Pessoa;
 import br.com.bianca.Escola.Professor;
+import java.awt.AWTEventMulticaster;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -39,6 +40,7 @@ public class Main {
       float valorHora = Float.parseFloat(JOptionPane.showInputDialog("Informe o valor da Hora: "));
       
       Professor professor = new Professor(cargaHoraria, valorHora, nomePr, rgPr, cpfpr, dataNascimento);
+      professor.getDisciplina().add(disciplina);
        
      String nomeA = JOptionPane.showInputDialog("Informe o nome do Aluno: ");
      String rgA = JOptionPane.showInputDialog("Informe o RG do Aluno: ");
@@ -48,7 +50,9 @@ public class Main {
      int matricula = Integer.parseInt(JOptionPane.showInputDialog("Informe a matricula do Aluno: "));
      Date dataM = sdf.parse(JOptionPane.showInputDialog("Informe a data de Matricula do Aluno: "));
       
+     
      Aluno aluno = new Aluno(matricula, dataA, nomeA, rgA, cpfA, dataM);
+     aluno.getDisciplina().add(disciplina);
      
      JOptionPane.showMessageDialog(null, disciplina.toString());
      JOptionPane.showMessageDialog(null, professor.toString());

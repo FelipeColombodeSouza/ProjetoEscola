@@ -48,11 +48,11 @@ public static int calculaIdade(java.util.Date dataNasc) {
 
     @Override
     public String toString() {
-        return "Pessoa{" + "nome= " + nome + 
-                "\n rg = " + rg + 
-                "\n cpf = " + cpf + 
-                "\n idade = " + idade +
-                "\n dataNascimanto = " + dataNascimento + '}';
+        return "Pessoa{" + "Nome= " + nome + 
+                "\n RG = " + rg + 
+                "\n CPF = " + cpf + 
+                "\n Idade = " + idade +
+                "\n Data Nascimento = " + dataNascimento + '}';
     }
 
 

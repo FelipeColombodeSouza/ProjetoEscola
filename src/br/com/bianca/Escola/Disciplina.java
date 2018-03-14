@@ -12,28 +12,28 @@ import java.util.Date;
  * @author bianca.149817
  */
 public class Disciplina{
-   private String Nome,departamento;
+   private String nome,departamento;
    private char status;
 
-    public Disciplina(String Nome, String departamento, char status) {
-        this.Nome = Nome;
+    public Disciplina(String nome, String departamento, char status) {
+        this.nome = nome;
         this.departamento = departamento;
         this.status = status;
     }  
    
     @Override
     public String toString() {
-        return "Disciplina{" + "nome = " + Nome +
-                "\n departamento = " + departamento + 
-                "\n status = " + status + '}';
+        return "Disciplina{" + "Nome = " + nome +
+                "\n Departamento = " + departamento + 
+                "\n Status = " + status + '}';
     }
 
     public String getNome() {
-        return Nome;
+        return nome;
     }
 
     public void setNome(String nome) {
-        this.Nome = nome;
+        this.nome = nome;
     }
 
     public String getDepartamento() {
