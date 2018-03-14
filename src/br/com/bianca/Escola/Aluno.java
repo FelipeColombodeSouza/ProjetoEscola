@@ -17,10 +17,9 @@ public class Aluno extends Pessoa {
  private ArrayList disciplina;
  private Date dataMatricula;
 
-    public Aluno(int matricula, ArrayList disciplina, Date dataMatricula, String nome, String rg, String cpf, Date dataNascimanto) {
-        super(nome, rg, cpf, dataNascimanto);
-        this.matricula = matricula;
-        this.disciplina = disciplina;
+    public Aluno(int matricula,  Date dataMatricula, String nome, String rg, String cpf, Date dataNascimento) {
+        super(nome, rg, cpf, dataNascimento);
+        this.matricula = matricula; 
         this.dataMatricula = dataMatricula;
     }
  
@@ -28,7 +27,9 @@ public class Aluno extends Pessoa {
 
     @Override
     public String toString() {
-        return "Aluno{" + "matricula=" + matricula + ", disciplina=" + disciplina + ", dataMatricula=" + dataMatricula + '}';
+        return super.toString()+ "Aluno{" + "matricula = " + matricula + 
+                "\n disciplina = " + disciplina + 
+                "\n dataMatricula = " + dataMatricula + '}';
     }
 
     public int getMatricula() {

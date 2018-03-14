@@ -15,14 +15,14 @@ import java.util.Date;
 public abstract class Pessoa  {
 private String nome,rg,cpf;
 private int idade;
-private Date dataNascimanto;
+private Date dataNascimento;
 
- public Pessoa(String nome, String rg, String cpf, Date dataNascimanto) {
+ public Pessoa(String nome, String rg, String cpf, Date dataNascimento) {
         this.nome = nome;
         this.rg = rg;
         this.cpf = cpf;
-        this.idade = this.calculaIdade(dataNascimanto);
-        this.dataNascimanto = dataNascimanto;
+        this.idade = this.calculaIdade(dataNascimento);
+        this.dataNascimento = dataNascimento;
     }
  
 public static int calculaIdade(java.util.Date dataNasc) {
@@ -48,17 +48,21 @@ public static int calculaIdade(java.util.Date dataNasc) {
 
     @Override
     public String toString() {
-        return "Pessoa{" + "nome=" + nome + ", rg=" + rg + ", cpf=" + cpf + ", idade=" + idade + ", dataNascimanto=" + dataNascimanto + '}';
+        return "Pessoa{" + "nome= " + nome + 
+                "\n rg = " + rg + 
+                "\n cpf = " + cpf + 
+                "\n idade = " + idade +
+                "\n dataNascimanto = " + dataNascimento + '}';
     }
 
 
 
     public Date getDataNascimanto() {
-        return dataNascimanto;
+        return dataNascimento;
     }
 
     public void setDataNascimanto(Date dataNascimanto) {
-        this.dataNascimanto = dataNascimanto;
+        this.dataNascimento = dataNascimanto;
     }
    
    

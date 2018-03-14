@@ -23,7 +23,9 @@ public class Disciplina{
    
     @Override
     public String toString() {
-        return "Disciplina{" + "nome=" + Nome + ", departamento=" + departamento + ", status=" + status + '}';
+        return "Disciplina{" + "nome = " + Nome +
+                "\n departamento = " + departamento + 
+                "\n status = " + status + '}';
     }
 
     public String getNome() {

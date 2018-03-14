@@ -23,40 +23,36 @@ public class Main {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws ParseException {
-        
-      String Nome =JOptionPane.showInputDialog("Informe o Nome da disciplina: ");
-      String departamento =JOptionPane.showInputDialog("Informe o departamento: ");
-      char status = JOptionPane.showInputDialog("Informe o status: ").charAt(0);
+    public static void main(String[] args) throws ParseException {     
+      String Nome =JOptionPane.showInputDialog("Informe o Nome da Disciplina: ");
+      String departamento =JOptionPane.showInputDialog("Informe o Departamento: ");
+      char status = JOptionPane.showInputDialog("Informe o Status: ").charAt(0);
       
-      Disciplina dis = new Disciplina(Nome, departamento, status);
+      Disciplina disciplina = new Disciplina(Nome, departamento, status);
     
-      
+      String nomePr = JOptionPane.showInputDialog("Informe o nome do Professor: ");
+      String rgPr   = JOptionPane.showInputDialog("Informe o RG do Professor: ");
+      String cpfpr  = JOptionPane.showInputDialog("Informe o CPF do Professor:");
+      SimpleDateFormat sdfr = new SimpleDateFormat("dd/MM/yyyy");
+        Date dataNascimento = sdfr.parse(JOptionPane.showInputDialog("informe a data de Nascimento do Professor: "));
       int cargaHoraria = Integer.parseInt(JOptionPane.showInputDialog("Informe a carga horaria: ")) ;
       float valorHora = Float.parseFloat(JOptionPane.showInputDialog("Informe o valor da Hora: "));
       
-      Professor pro = new Professor(cargaHoraria, valorHora, Nome, Nome, Nome, dataNascimanto);
-      
-      String nome = JOptionPane.showInputDialog("Informe o nome: ");
-      String rg = JOptionPane.showInputDialog("Informe o RG: ");
-      String cpf= JOptionPane.showInputDialog("Informe o CPF:");
-      
-      SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-      Date dataN = sdf.parse(JOptionPane.showInputDialog("Informe a data de Nascimento: "));
-      
-     int matricula = Integer.parseInt(JOptionPane.showInputDialog("Informe a matricula: "));
-     Date dataM = sdf.parse(JOptionPane.showInputDialog("Informe a data de Matricula: "));
-      
-     Aluno alu = new Aluno(matricula, disciplina, dataM, nome, rg, cpf, dataM);
-      
-      
-      
-      
-      
-      
-      
+      Professor professor = new Professor(cargaHoraria, valorHora, nomePr, rgPr, cpfpr, dataNascimento);
        
-       
+     String nomeA = JOptionPane.showInputDialog("Informe o nome do Aluno: ");
+     String rgA = JOptionPane.showInputDialog("Informe o RG do Aluno: ");
+     String cpfA= JOptionPane.showInputDialog("Informe o CPF do Aluno:");
+     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+      Date dataA = sdf.parse(JOptionPane.showInputDialog("Informe a data de Nascimento do Aluno: "));
+     int matricula = Integer.parseInt(JOptionPane.showInputDialog("Informe a matricula do Aluno: "));
+     Date dataM = sdf.parse(JOptionPane.showInputDialog("Informe a data de Matricula do Aluno: "));
+      
+     Aluno aluno = new Aluno(matricula, dataA, nomeA, rgA, cpfA, dataM);
+     
+     JOptionPane.showMessageDialog(null, disciplina.toString());
+     JOptionPane.showMessageDialog(null, professor.toString());
+     JOptionPane.showMessageDialog(null, aluno.toString());
     }
     
 }
