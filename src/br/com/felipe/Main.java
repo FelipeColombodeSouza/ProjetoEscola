@@ -3,18 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.bianca;
+package br.com.felipe;
 
-import br.com.bianca.Escola.Aluno;
-import br.com.bianca.Escola.Disciplina;
-import br.com.bianca.Escola.Pessoa;
-import br.com.bianca.Escola.Professor;
+import br.com.felipe.Escola.Aluno;
+import br.com.felipe.Escola.Disciplina;
+import br.com.felipe.Escola.Pessoa;
+import br.com.felipe.Escola.Professor;
 import java.awt.AWTEventMulticaster;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.JOptionPane;
+import jdk.nashorn.internal.objects.NativeArray;
 
 /**
  *
@@ -27,16 +28,26 @@ public class Main {
      */
     public static void main(String[] args) throws ParseException {     
      int escMenu = 0;
+    
+   
      ArrayList<Disciplina> materias = new ArrayList<>();
      ArrayList<Aluno> alunos = new ArrayList<>();
      ArrayList<Professor> prof = new ArrayList<>();
      
+         
+     
+     
+       
      do{
         escMenu = Integer.parseInt(JOptionPane.showInputDialog("Escolha uma das opções/; \n"
-                 +"1. Cadastro Disciplinas \n"
-                 +"2. Cadastro de Alunos \n"
-                 +"3. Cadastro de Professores \n"
-                 +"4. Sair"));
+                 +"1- Cadastro Disciplinas \n"
+                 +"2- Cadastro de Alunos \n"
+                 +"3- Cadastro de Professores \n"
+                 +"4- Consultar \n"              
+                 +"5- Sair"));
+        
+        
+        
         switch(escMenu){
              case 1:{
                  do{
@@ -62,7 +73,7 @@ public class Main {
                  alunos.add(new Aluno(matricula, dataA, nome, rg, cpf, dataM));
                  
                  if (JOptionPane.showConfirmDialog(null,"O aluno já se matriculou em alguma disciplina?")==0){
-                     String materiasExistentes = " ";
+                    String materiasExistentes = " ";
                       for (Disciplina materia : materias){
                         materiasExistentes += materias.indexOf(materia) + " " + materia.getNome() + "\n";
                       }
@@ -90,7 +101,7 @@ public class Main {
                 float valorHora = Float.parseFloat(JOptionPane.showInputDialog("Informe o valor da Hora: "));
       
               prof.add(new Professor(cargaHoraria, valorHora, nome, rg, cpf, dataNascimento));
-               if (JOptionPane.showConfirmDialog(null,"O aluno já se matriculou em alguma disciplina?")==0){
+               if (JOptionPane.showConfirmDialog(null,"O professor já está em alguma disciplina?")==0){
                      String materiasExistentes = " ";
                       for (Disciplina materia : materias){
                         materiasExistentes += materias.indexOf(materia) + " " + materia.getNome() + "\n";
@@ -102,13 +113,83 @@ public class Main {
                      
                }
                
-              }while((JOptionPane.showConfirmDialog(null, "Deseja continuar?"))==0);
+              }while((JOptionPane.showConfirmDialog(null, "Deseja continuar?"))==0);}
+             
                 break;    
                  
-             }
-         }                 
-     }while (escMenu != 4);
+             case 4:{
+             int menu = 0;
+             do{
+                 menu = Integer.parseInt(JOptionPane.showInputDialog("Escolha uma das opções/; \n"
+                         + "1- Consulta por código \n"
+                         + "2- Consulta por nome \n"
+                         + "3- Sair." ));
+                 switch(menu){
+                     case 1:{
+                     int opc = 0;
+                         do{
+                      opc = Integer.parseInt(JOptionPane.showInputDialog("Consultando por código.\n" 
+                              + "1- Consultar matéria\n" 
+                              + "2- Consultar aluno\n"
+                              + "3- Consultar professor" 
+                              + "4- Sair."));    
+                         
+                            
+                     
+                     }while(opc != 4);
+                     
+                     }
+                 
+                 
+                 }
              
-    }
+             
+             }while(menu != 3);
+             
+             
+             
+             
+             
+             
+             
+             }
+               /* case 4:{
+                    String materiasExistentes = " ";
+                    for (Disciplina materia : materias){
+                        materiasExistentes += materias.indexOf(materia) + " " + materia.getNome() + "\n";
+                      }
+                    JOptionPane.showMessageDialog(null,"Matérias: \n" + materiasExistentes); 
+             }
+                break;
+                
+                case 5:{
+                    String alunosExistentes = " ";
+                    for(Aluno aluno : alunos){
+                    alunosExistentes += alunos.indexOf(aluno) + " " + aluno.getNome() + "\n";
+                    }
+                JOptionPane.showMessageDialog(null,"Alunos: \n" + alunosExistentes );
+                
+                }
+                break;
+                
+                case 6:{
+                String profExistente = " ";
+                for(Professor professor : prof){
+                profExistente += prof.indexOf(prof) + " " + professor.getNome() + "\n";
+                
+                }
+                JOptionPane.showMessageDialog(null,"Professores: \n" + profExistente);
+                break;
+                
+                }
+                
+              */  
+             }
+                          
+     }while (escMenu != 4);
+      }
+     
+  }
+   
     
-}
+
